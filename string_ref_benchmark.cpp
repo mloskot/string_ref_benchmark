@@ -49,7 +49,7 @@ namespace bsref {
 }
 
 namespace {
-    std::size_t max_iterations = 10000;
+    std::size_t max_iterations = 1000000;
 
     template <typename Data, typename Operation>
     void benchmark(char const* const name, std::size_t iterations, Data const& data, Operation op)

@@ -91,9 +91,9 @@ int main()
     data.emplace_back("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", 0, 3*26);
     
     benchmark("extract_part(std::string)", max_iterations, data, stds::extract_part);
-    benchmark("extract_part_ref(CString)", max_iterations, data, stds::extract_part_ref);
+    benchmark("extract_part_ref(std::string)", max_iterations, data, stds::extract_part_ref);
+    benchmark("extract_part(CString)", max_iterations, data, mfcs::extract_part);
     benchmark("extract_part_ref(CString)", max_iterations, data, mfcs::extract_part_ref);
-    benchmark("extract_part_ref(std::string)", max_iterations, data, mfcs::extract_part_ref);
-    benchmark("extract_part(string_re)", max_iterations, data, bsref::extract_part);
-    benchmark("extract_part_ref(string_re)", max_iterations, data, bsref::extract_part_ref);
+    benchmark("extract_part(string_ref)", max_iterations, data, bsref::extract_part);
+    benchmark("extract_part_ref(string_ref)", max_iterations, data, bsref::extract_part_ref);
 }

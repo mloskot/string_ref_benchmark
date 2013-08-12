@@ -1,6 +1,5 @@
 //
 // Copyright (C) 2013 Mateusz Loskot <mateusz@loskot.net>
-// Copyright (c) 2011-2013 Adam Wulkiewicz, Lodz, Poland.
 //
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE_1_0.txt or copy 

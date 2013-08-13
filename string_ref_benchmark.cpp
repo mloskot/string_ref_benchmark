@@ -135,11 +135,15 @@ int main()
         data.emplace_back("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", 26, 26);
         data.emplace_back("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", 0, 3*26);
 
+#ifdef _MSC_VER
         benchmark("substr(CStringA)", max_iterations, data, test_substr<CStringA>());
+#endif
         benchmark("substr(string)", max_iterations, data, test_substr<std::string>());
         benchmark("substr(string_ref)", max_iterations, data, test_substr<boost::string_ref>());
 
+#ifdef _MSC_VER
         benchmark("add(CStringA)", max_iterations, data, test_add<CStringA>());
+#endif
         benchmark("add(string)", max_iterations, data, test_add<std::string>());
         benchmark("add(string_ref)", max_iterations, data, test_add<boost::string_ref>());
     }
@@ -150,12 +154,16 @@ int main()
         data.emplace_back(L"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", 26, 3);
         data.emplace_back(L"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", 26, 26);
         data.emplace_back(L"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", 0, 3*26);
-        
+      
+#ifdef _MSC_VER
         benchmark("substr(CString)", max_iterations, data, test_substr<CString>());
+#endif
         benchmark("substr(wstring)", max_iterations, data, test_substr<std::wstring>());
         benchmark("substr(wstring_ref)", max_iterations, data, test_substr<boost::wstring_ref>());
 
+#ifdef _MSC_VER
         benchmark("add(CString)", max_iterations, data, test_add<CString>());
+#endif
         benchmark("add(wstring)", max_iterations, data, test_add<std::wstring>());
         benchmark("add(wstring_ref)", max_iterations, data, test_add<boost::wstring_ref>());
     }

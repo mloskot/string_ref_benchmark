@@ -14,10 +14,19 @@ HW: Intel(R) Xeon(R) CPU E5-2687W 0 @ 3.10GHz, 16 GB RAM; OS: Windows 7 64-bit
 SW: Visual Studio 2012
 
 ```
-extract_part(std::string):      0.831809
-extract_part_ref(std::string):  0.818625
-extract_part(CString):          1.13124
-extract_part_ref(CString):      1.10292
-extract_part(string_ref):       0.167021
-extract_part_ref(string_ref):   0.165776
+substr(CStringA):       1.04746
+substr(string):         0.80593
+substr(string_ref):     0.15586
+
+add(CStringA):          1.82378
+add(string):            1.49661
+add(string_ref):        1.48350
+
+substr(CString):        0.97871
+substr(wstring):        0.76421
+substr(wstring_ref):    0.15399
+
+add(CString):           1.88931
+add(wstring):           1.53090
+add(wstring_ref):       1.51123
 ```
